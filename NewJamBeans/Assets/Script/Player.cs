@@ -8,7 +8,14 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         rb = this.GetComponent<Rigidbody2D>();
+        InvokeRepeating("IncrementTimeScale", 1f, 1f);
+    }
+
+    void IncrementTimeScale()
+    {
+        Time.timeScale += 0.02f;
     }
 
     void FixedUpdate()
