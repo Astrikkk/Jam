@@ -18,7 +18,7 @@ public class MenuManager : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void Shop()
@@ -33,5 +33,10 @@ public class MenuManager : MonoBehaviour
             ShopPanel.SetActive(true);
             isOpen = true;
         }
+    }
+
+    public void StarGame()
+    {
+        SceneManager.LoadScene(1);
     }
 }
