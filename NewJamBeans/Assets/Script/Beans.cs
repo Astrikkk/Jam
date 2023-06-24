@@ -7,6 +7,8 @@ public class Beans : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject Player;
 
+    public GameObject GameManager;
+
     private void Update()
     {
         move.y += speedY;
@@ -17,12 +19,18 @@ public class Beans : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if(GameManager.GetComponent<Score>().score == 1000)
+        {
+            speedY = 0.9f;
+        }
     }
 
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         rb = this.GetComponent<Rigidbody2D>();
+        GameManager = GameObject.FindGameObjectWithTag("GameManager");
     }
 
     void FixedUpdate()
@@ -34,7 +42,11 @@ public class Beans : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-
+            GameManager.GetComponent<GameManager>().BeansCount += 1;
+            Destroy(gameObject);
+        }
+        else
+        {
             Destroy(gameObject);
         }
     }

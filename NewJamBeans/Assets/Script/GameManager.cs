@@ -10,12 +10,17 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+        if(PlayerPrefs.HasKey("Money"))
+        {
+            BeansCount = PlayerPrefs.GetInt("Money");
+            beanscountTXT.text = BeansCount.ToString();
+        }
     }
 
     
     void Update()
     {
         beanscountTXT.text = BeansCount.ToString();
+        PlayerPrefs.SetInt("Money", BeansCount);
     }
 }

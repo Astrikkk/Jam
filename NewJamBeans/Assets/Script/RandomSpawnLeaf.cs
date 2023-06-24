@@ -9,9 +9,11 @@ public class RandomSpawnLeaf : MonoBehaviour
     [SerializeField]
     private float spawnRate = 2f;
     float nextSpawn = 0.0f;
+    public GameObject GameManager;
+
     void Start()
     {
-        
+        GameManager = GameObject.FindGameObjectWithTag("GameManager");
     }
 
     void Update()
@@ -22,16 +24,19 @@ public class RandomSpawnLeaf : MonoBehaviour
             RandX = Random.Range(1, 3);
             if(RandX == 1)
             {
-                whereToSpawn = new Vector2(-3.606703f, transform.position.y);
+                whereToSpawn = new Vector2(-3.53f, transform.position.y);
                 Instantiate(obj, whereToSpawn, Quaternion.identity);
             }
             else if(RandX == 2)
             {
-                whereToSpawn = new Vector2(3.62f, transform.position.y);
-                Instantiate(obj, whereToSpawn, Quaternion.identity);
+                whereToSpawn = new Vector2(2.76f, transform.position.y);
+                Instantiate(obj, whereToSpawn, Quaternion.Euler(0, 180, 0));
             }
+        }
 
-            print(RandX);
+        if(GameManager.GetComponent<Score>().score == 1000)
+        {
+            spawnRate = 1f;
         }
     }
 }

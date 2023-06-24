@@ -9,6 +9,9 @@ public class Cloud : MonoBehaviour
 
     public float Radius = 10f;
     public LayerMask Leaf;
+    public LayerMask Bean;
+
+    public GameObject GameManager;
 
     private void Update()
     {
@@ -20,12 +23,18 @@ public class Cloud : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if(GameManager.GetComponent<Score>().score == 1000)
+        {
+            speedY = 0.9f;
+        }
     }
 
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         rb = this.GetComponent<Rigidbody2D>();
+        GameManager = GameObject.FindGameObjectWithTag("GameManager");
     }
 
     void FixedUpdate()
@@ -40,7 +49,13 @@ public class Cloud : MonoBehaviour
             Collider2D[] LeafAktive = Physics2D.OverlapCircleAll(transform.position, Radius, Leaf);
             foreach(Collider2D leaf in LeafAktive)
             {
-                leaf.GetComponent<PlatformLeafs>().speedY = 0.05f;
+                leaf.GetComponent<PlatformLeafs>().speedY -= 0.05f;
+            }
+
+            Collider2D[] BeanAktive = Physics2D.OverlapCircleAll(transform.position, Radius, Bean);
+            foreach(Collider2D bean in BeanAktive)
+            {
+                bean.GetComponent<Beans>().speedY -= 0.04f;
             }
             Destroy(gameObject);
         }
