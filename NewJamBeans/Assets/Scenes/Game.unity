@@ -521,7 +521,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0005506575, y: 0.000000029802322}
+  m_Offset: {x: -0.0005506575, y: -0.085989326}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -532,7 +532,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.22542036, y: 0.7992355}
+  m_Size: {x: 0.22542036, y: 0.6272568}
   m_EdgeRadius: 0
 --- !u!50 &216760148
 Rigidbody2D:
@@ -629,8 +629,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216760146}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2301328, y: 7.34, z: -8.0103}
-  m_LocalScale: {x: 4, y: 4, z: 0}
+  m_LocalPosition: {x: 1.1395, y: 9.8877, z: -8.0103}
+  m_LocalScale: {x: 3.01004, y: 3.01004, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1523666432}
@@ -656,6 +656,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &226003488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,7 +1238,7 @@ MonoBehaviour:
   m_Text: 'Narrator: Hello Jack! I see you fell from a cloud. I have some advice
     for you "Avoid the leaves otherwise it will be bad and use the cloud to slow
     down your speed. Also, collect the beans." Hmm, I got the idea to use A and D
-    to dodge, stupid huh? OK, good luck!'
+    to dodge, stupid huh? Sometimes you''ll see some anomalies. But good luck!'
 --- !u!222 &512486231
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2426,8 +2427,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 89.1, y: -54.42}
-  m_SizeDelta: {x: 77.8, y: 32.76}
+  m_AnchoredPosition: {x: 86.89, y: -50.94}
+  m_SizeDelta: {x: 96.18, y: 44.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1060953572
 MonoBehaviour:
@@ -2637,8 +2638,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1200703205}
   - component: {fileID: 1200703204}
-  - component: {fileID: 1200703203}
   - component: {fileID: 1200703206}
+  - component: {fileID: 1200703207}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Spawn
@@ -2646,21 +2647,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1200703203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200703202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58b0d07cb2582b94c81673e7758c1541, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obj: {fileID: 1704774329736560184, guid: f98b84d2b75ab7c489257a5dfc1f5c17, type: 3}
-  spawnRate: 2
-  GameManager: {fileID: 0}
 --- !u!114 &1200703204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2704,6 +2690,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 7724982426654815826, guid: 825e22d632e16464ba0fd1a1867f5ae2, type: 3}
+  spawnRate: 2
+  GameManager: {fileID: 0}
+--- !u!114 &1200703207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200703202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 145411473be12e740928d104a3ef047f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj:
+  - {fileID: 235934846005188507, guid: e5130b2ad0491ea4184c655dc601d3ed, type: 3}
+  - {fileID: 3976937816625502562, guid: 7b984320a6ee1a9468dff4c3a1165f3b, type: 3}
+  - {fileID: 2060502610822339784, guid: 28af47b31b6eb3a43bae49ef9bc7f899, type: 3}
+  - {fileID: 2327513501912927496, guid: 7e078ebcc7ced9347afa6e5f9f482517, type: 3}
+  - {fileID: 8517560675978467077, guid: a2ed849df11899943bd711af80eed28d, type: 3}
+  - {fileID: 8050530944708149857, guid: 2660a8ad088418c478a4670789c1b034, type: 3}
+  - {fileID: 3976937816625502562, guid: 7b984320a6ee1a9468dff4c3a1165f3b, type: 3}
   spawnRate: 2
   GameManager: {fileID: 0}
 --- !u!1 &1248975033
@@ -3339,6 +3347,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!320 &1523666431
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -3920,8 +3929,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52.67, y: 33.7}
-  m_SizeDelta: {x: 169.63, y: 30}
+  m_AnchoredPosition: {x: 45.98, y: 36.04}
+  m_SizeDelta: {x: 188.09, y: 52.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1834477053
 MonoBehaviour:
